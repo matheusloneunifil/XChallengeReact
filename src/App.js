@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { withRouter } from "react-router-dom";
+import { connect } from "react-redux";
+import Routes from "./routes";
+import { updateAuthentication, isLoading } from "./store/action";
 
-function App() {
+const App = (props) => {
+  let childProps = {
+    isAuthenticated: props.isAuthenticated,
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`app light`}>
+      <Routes childProps={childProps} />
     </div>
   );
-}
+};
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    isAuthenticated: state.appState.isAuthenticated,
+    isLoading: state.appState.isLoading,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    updateAuth: (bool, user) => dispatch(updateAuthentication(bool, user)),
+    updateLoading: (bool) => dispatch(isLoading(bool)),
+  };
+};
+
+// export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
+export default connect(mapStateToProps, mapDispatchToProps)(App);

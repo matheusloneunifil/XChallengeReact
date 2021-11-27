@@ -1,0 +1,39 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+}
+body {
+  background-color: #f7f7f7;
+}
+
+.app {
+  text-align: center;
+  margin: 30px auto;
+  .links {
+    a {
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+    }
+  }
+}
+
+.passwordValidatorWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row;
+  > div {
+    margin-right: 15px;
+    margin-bottom: 2px;
+    display: flex;
+    align-items: center;
+    font-size: 0.8em;
+  }
+  .icon {
+    margin-right: 5px;
+    font-size: 1.2em;
+  }
+}
