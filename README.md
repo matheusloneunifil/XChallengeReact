@@ -14,7 +14,7 @@ React v17.0 ( Biblioteca Redux) + Hooks + Sagas
 Material UI v4
 
 #Execução normal nos navegadores atuais.
-Para navegadores que dependem de **Maps e **Sets ( <-IE 11) o codigo foi adaptado.
+Para navegadores que dependem de **Maps** e **Sets** ( <-IE 11) o codigo foi adaptado.
 
 ### É necessário possuir Node.js instalado e para visualização do código é necessário uma IDE de sua preferência(Visual Studio Code recomendado).
 
